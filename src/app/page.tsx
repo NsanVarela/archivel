@@ -42,7 +42,7 @@ export default function Home() {
 
       <section style={{ padding: "64px 48px", maxWidth: "720px", margin: "0 auto" }}>
         <p style={{ fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", color: "rgba(11,11,11,0.35)", marginBottom: "32px", fontFamily: "sans-serif" }}>Les 4 piliers</p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1px", background: "rgba(11,11,11,0.08)", border: "0.5px solid rgba(11,11,11,0.08)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1px", background: "rgba(11,11,11,0.08)", border: "0.5px solid rgba(11,11,11,0.08)" }}>
           {[
             { num: "01", title: "La lettre", desc: "Mensuelle. Un point de vue, une opportunité, un profil, une ressource." },
             { num: "02", title: "À mesa", desc: "Dîner trimestriel à Paris. 15 personnes max. Sur invitation." },
