@@ -11,11 +11,17 @@ export async function POST(req: NextRequest) {
     const supabaseUrl = process.env.SUPABASE_URL;
     const supabaseKey = process.env.SUPABASE_SECRET_KEY;
 
+    console.log("SUPABASE_URL:", supabaseUrl ? "présent" : "MANQUANT");
+    console.log("SUPABASE_SECRET_KEY:", supabaseKey ? "présent" : "MANQUANT");
+
     if (!supabaseUrl || !supabaseKey) {
-      return NextResponse.json({ error: "Configuration manquante." }, { status: 500 });
+      return NextResponse.json({ error: "Configuration manquante.", details: { url: !!supabaseUrl, key: !!supabaseKey } }, { status: 500 });
     }
 
-    const res = await fetch(`${supabaseUrl}/rest/v1/subscribers`, {
+    const endpoint = `${supabaseUrl}/rest/v1/subscribers`;
+    console.log("Calling:", endpoint);
+
+    const res = await fetch(endpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -26,12 +32,17 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify({ email }),
     });
 
+    console.log("Supabase status:", res.status);
+
     if (!res.ok && res.status !== 409) {
-      return NextResponse.json({ error: "Erreur lors de l'inscription." }, { status: 500 });
+      const errText = await res.text();
+      console.log("Supabase error:", errText);
+      return NextResponse.json({ error: "Erreur lors de l'inscription.", supabase: errText }, { status: 500 });
     }
 
     return NextResponse.json({ success: true });
-  } catch {
-    return NextResponse.json({ error: "Erreur serveur." }, { status: 500 });
+  } catch (err) {
+    console.log("Catch error:", err);
+    return NextResponse.json({ error: "Erreur serveur.", details: String(err) }, { status: 500 });
   }
 }
