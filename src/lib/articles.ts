@@ -4,6 +4,7 @@ export interface Article {
   date: string;
   excerpt: string;
   content: string;
+  type: "lettre" | "article";
 }
 
 export const articles: Article[] = [
@@ -12,6 +13,7 @@ export const articles: Article[] = [
     title: "arChiVel. Un nom. Trois secrets.",
     date: "Août 2026",
     excerpt: "Il y a des noms qu'on choisit. Et des noms qui s'imposent. Celui-là s'est imposé.",
+    type: "article",
     content: `Il y a des noms qu'on choisit.
 Et des noms qui s'imposent.
 
@@ -65,6 +67,7 @@ Pour ceux qui ont entendu l'appel de l'archipel.
     title: "Nos é así.",
     date: "Août 2026 — Lettre n°1",
     excerpt: "Nous sommes la diaspora qui ne se plaint pas. Qui construit. Qui connecte. Qui revient.",
+    type: "lettre",
     content: `*Nos é así.*
 
 Nous sommes la diaspora qui ne se plaint pas.
@@ -101,6 +104,7 @@ Nicolas`
     title: "Bu ka ten inda bu nacionalidade?",
     date: "Août 2026",
     excerpt: "Les visages changent à chaque arrivée. Mais la question, elle, ne change pas.",
+    type: "article",
     content: `**"Bu ka ten inda bu nacionalidade?"**
 
 Les visages changent à chaque arrivée. Mais la question, elle, ne change pas.
@@ -162,6 +166,7 @@ La nationalité capverdienne ouvre des portes concrètes : statut émigrant pour
     title: "Pendant que vous lisez ceci depuis Paris.",
     date: "Août 2026",
     excerpt: "Ils construisent. Pas dans dix ans. Maintenant — depuis Praia, depuis Mindelo.",
+    type: "article",
     content: `Ils construisent.
 
 Pas dans dix ans. Pas quand les conditions seront meilleures. Maintenant — depuis Praia, depuis Mindelo, depuis un archipel que le monde commence à regarder autrement.

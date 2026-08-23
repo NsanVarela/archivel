@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { articles } from "@/lib/articles";
 
-export default function ArticlesPage() {
-  const articlesList = articles.filter(a => a.type === "article");
+export default function LettresPage() {
+  const lettres = articles.filter(a => a.type === "lettre");
   return (
     <div style={{ minHeight: "100vh", background: "#ffffff", color: "#0b0b0b" }}>
       <nav style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "28px 48px", borderBottom: "0.5px solid rgba(11,11,11,0.1)" }}>
@@ -11,14 +11,14 @@ export default function ArticlesPage() {
         </Link>
       </nav>
       <section style={{ padding: "64px 48px", maxWidth: "720px", margin: "0 auto" }}>
-        <h1 style={{ fontFamily: "Georgia, serif", fontSize: "32px", fontWeight: 400, marginBottom: "48px", letterSpacing: "-0.02em" }}>Articles</h1>
+        <h1 style={{ fontFamily: "Georgia, serif", fontSize: "32px", fontWeight: 400, marginBottom: "48px", letterSpacing: "-0.02em" }}>Lettres</h1>
         <div>
-          {articlesList.map((article, i) => (
-            <div key={article.slug} style={{ borderTop: i === 0 ? "0.5px solid rgba(11,11,11,0.12)" : "none", borderBottom: "0.5px solid rgba(11,11,11,0.08)", padding: "28px 0" }}>
-              <Link href={`/articles/${article.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
-                <p style={{ fontSize: "12px", color: "rgba(11,11,11,0.35)", marginBottom: "10px", fontFamily: "sans-serif" }}>{article.date}</p>
-                <h2 style={{ fontFamily: "Georgia, serif", fontSize: "22px", fontWeight: 400, color: "#0b0b0b", marginBottom: "10px", lineHeight: 1.3, letterSpacing: "-0.01em" }}>{article.title}</h2>
-                <p style={{ fontSize: "15px", color: "rgba(11,11,11,0.5)", lineHeight: 1.65, fontFamily: "Georgia, serif", fontStyle: "italic" }}>{article.excerpt}</p>
+          {lettres.map((lettre, i) => (
+            <div key={lettre.slug} style={{ borderTop: i === 0 ? "0.5px solid rgba(11,11,11,0.12)" : "none", borderBottom: "0.5px solid rgba(11,11,11,0.08)", padding: "28px 0" }}>
+              <Link href={`/articles/${lettre.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
+                <p style={{ fontSize: "12px", color: "rgba(11,11,11,0.35)", marginBottom: "10px", fontFamily: "sans-serif" }}>{lettre.date}</p>
+                <h2 style={{ fontFamily: "Georgia, serif", fontSize: "22px", fontWeight: 400, color: "#0b0b0b", marginBottom: "10px", lineHeight: 1.3, letterSpacing: "-0.01em" }}>{lettre.title}</h2>
+                <p style={{ fontSize: "15px", color: "rgba(11,11,11,0.5)", lineHeight: 1.65, fontFamily: "Georgia, serif", fontStyle: "italic" }}>{lettre.excerpt}</p>
               </Link>
             </div>
           ))}

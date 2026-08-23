@@ -17,7 +17,8 @@ export default function Home() {
           ar<span style={{ color: "#c8930a" }}>C</span>hi<span style={{ color: "#c8930a" }}>V</span>el
         </span>
         <div style={{ display: "flex", gap: "32px" }}>
-          <Link href="/articles" style={{ fontSize: "13px", color: "rgba(11,11,11,0.5)", textDecoration: "none", fontFamily: "sans-serif" }}>Lettres</Link>
+          <Link href="/lettres" style={{ fontSize: "13px", color: "rgba(11,11,11,0.5)", textDecoration: "none", fontFamily: "sans-serif" }}>Lettres</Link>
+          <Link href="/articles" style={{ fontSize: "13px", color: "rgba(11,11,11,0.5)", textDecoration: "none", fontFamily: "sans-serif" }}>Articles</Link>
           <Link href="/a-propos" style={{ fontSize: "13px", color: "rgba(11,11,11,0.5)", textDecoration: "none", fontFamily: "sans-serif" }}>À propos</Link>
         </div>
       </nav>
