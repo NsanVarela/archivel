@@ -1,6 +1,7 @@
 import { getArticleBySlug, articles } from "@/lib/articles";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
@@ -44,6 +45,18 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 400, lineHeight: 1.2, letterSpacing: "-0.02em", marginBottom: "48px", color: "#0b0b0b" }}>
           {article.title}
         </h1>
+        
+        {article.image && (
+          <div style={{ marginBottom: "48px", marginTop: "32px", position: "relative", width: "100%", aspectRatio: "16/9" }}>
+            <Image
+              src={article.image}
+              alt={article.title}
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+        )}
+
         <div>{renderContent(article.content)}</div>
       </article>
 

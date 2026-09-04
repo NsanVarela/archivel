@@ -5,6 +5,7 @@ export interface Article {
   excerpt: string;
   content: string;
   type: "lettre" | "article";
+  image?: string;
 }
 
 export const articles: Article[] = [
@@ -14,6 +15,7 @@ export const articles: Article[] = [
     date: "Août 2026",
     excerpt: "Il y a des noms qu'on choisit. Et des noms qui s'imposent. Celui-là s'est imposé.",
     type: "article",
+    image: "/images/archivel.png",
     content: `Il y a des noms qu'on choisit.
 Et des noms qui s'imposent.
 
@@ -68,6 +70,7 @@ Pour ceux qui ont entendu l'appel de l'archipel.
     date: "Août 2026 — Lettre n°1",
     excerpt: "Nous sommes la diaspora qui ne se plaint pas. Qui construit. Qui connecte. Qui revient.",
     type: "lettre",
+    image: "/images/diaspora.png",
     content: `*Nos é así.*
 
 Nous sommes la diaspora qui ne se plaint pas.
@@ -105,6 +108,7 @@ Nicolas`
     date: "Août 2026",
     excerpt: "Les visages changent à chaque arrivée. Mais la question, elle, ne change pas.",
     type: "article",
+    image: "/images/double-nationalite.png",
     content: `**"Bu ka ten inda bu nacionalidade?"**
 
 Les visages changent à chaque arrivée. Mais la question, elle, ne change pas.
@@ -167,6 +171,7 @@ La nationalité capverdienne ouvre des portes concrètes : statut émigrant pour
     date: "Août 2026",
     excerpt: "Ils construisent. Pas dans dix ans. Maintenant — depuis Praia, depuis Mindelo.",
     type: "article",
+    image: "/images/startup.png",
     content: `Ils construisent.
 
 Pas dans dix ans. Pas quand les conditions seront meilleures. Maintenant — depuis Praia, depuis Mindelo, depuis un archipel que le monde commence à regarder autrement.
