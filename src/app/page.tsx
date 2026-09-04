@@ -64,7 +64,7 @@ export default function Home() {
       <section style={{ padding: "64px 48px", maxWidth: "720px", margin: "0 auto" }}>
         <p style={{ fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", color: "rgba(11,11,11,0.35)", marginBottom: "32px", fontFamily: "sans-serif" }}>Dernières lettres</p>
         <div>
-          {articles.map((article, i) => (
+          {[...articles].reverse().map((article, i) => (
             <div key={article.slug} style={{ borderTop: i === 0 ? "0.5px solid rgba(11,11,11,0.12)" : "none", borderBottom: "0.5px solid rgba(11,11,11,0.08)", padding: "24px 0" }}>
               <Link href={`/articles/${article.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
                 <p style={{ fontSize: "12px", color: "rgba(11,11,11,0.35)", marginBottom: "8px", fontFamily: "sans-serif" }}>{article.date}</p>

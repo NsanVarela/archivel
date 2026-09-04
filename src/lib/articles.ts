@@ -6,6 +6,7 @@ export interface Article {
   content: string;
   type: "lettre" | "article";
   image?: string;
+  tags?: string[];
 }
 
 export const articles: Article[] = [
@@ -16,6 +17,7 @@ export const articles: Article[] = [
     excerpt: "Il y a des noms qu'on choisit. Et des noms qui s'imposent. Celui-là s'est imposé.",
     type: "article",
     image: "/images/archivel.png",
+    tags: ["diaspora", "identité"],
     content: `Il y a des noms qu'on choisit.
 Et des noms qui s'imposent.
 
@@ -71,6 +73,7 @@ Pour ceux qui ont entendu l'appel de l'archipel.
     excerpt: "Nous sommes la diaspora qui ne se plaint pas. Qui construit. Qui connecte. Qui revient.",
     type: "lettre",
     image: "/images/diaspora.png",
+    tags: ["diaspora"],
     content: `*Nos é así.*
 
 Nous sommes la diaspora qui ne se plaint pas.
@@ -109,6 +112,7 @@ Nicolas`
     excerpt: "Les visages changent à chaque arrivée. Mais la question, elle, ne change pas.",
     type: "article",
     image: "/images/double-nationalite.png",
+    tags: ["cap-vert", "ressource", "guide"],
     content: `**"Bu ka ten inda bu nacionalidade?"**
 
 Les visages changent à chaque arrivée. Mais la question, elle, ne change pas.
@@ -172,6 +176,7 @@ La nationalité capverdienne ouvre des portes concrètes : statut émigrant pour
     excerpt: "Ils construisent. Pas dans dix ans. Maintenant — depuis Praia, depuis Mindelo.",
     type: "article",
     image: "/images/startup.png",
+    tags: ["entrepreneuriat", "cap-vert", "tech"],
     content: `Ils construisent.
 
 Pas dans dix ans. Pas quand les conditions seront meilleures. Maintenant — depuis Praia, depuis Mindelo, depuis un archipel que le monde commence à regarder autrement.
@@ -223,6 +228,121 @@ Ils construisent dans un marché de 530 000 habitants, sans capital-risque abond
 Et ils cherchent ce que la diaspora a — des réseaux internationaux, une vision forgée ailleurs, des connexions avec des marchés plus grands.
 
 *C'est là qu'archivel existe.*
+
+*Djunta* — on se retrouve.`
+  },
+  {
+    slug: "joanito-rocha-un-kriolu-qui-trahit",
+    title: "Un kriolu qui trahit, une conversation qui s'engage",
+    date: "Septembre 2026",
+    excerpt: "À Tarrafal, une rencontre avec Joanito Rocha, entrepreneur capverdien qui construit par petites étapes.",
+    type: "article",
+    tags: ["entrepreneuriat", "cap-vert", "dépêche-de-terrain", "IA"],
+    content: `*Tarrafal. Septembre 2026.*
+
+Je déjeunais seul quand Joanito Rocha est arrivé avec un groupe de voyageurs français. Guide touristique, écrit sur son polo. Mar & Rocha Travel.
+
+Quelques mots échangés ont suffi. Il a entendu mon kriolu — pas celui d'un local. Un sourire. Une remarque. La conversation s'est engagée naturellement, sans préambule. Deux personnes parlant d'expériences différentes du tourisme. Puis glissant progressivement vers quelque chose de plus profond : l'entrepreneuriat. La mentalité. Comment on construit.
+
+C'est le genre de rencontre qu'Archivel existe pour documenter.
+
+Je lui ai proposé une interview.
+
+---
+
+Joanito Rocha dirige Mar & Rocha Travel, une agence de tourisme basée à Praia, Santiago. Pas une structure massive. Une agence familiale qui grandit progressivement. Trekking, écotourisme, visites culturelles, tours nautiques. L'île de Santiago, Tarrafal, les environs. Des clients réguliers. Une présence croissante sur les plateformes touristiques — TripAdvisor, GetYourGuide.
+
+Ce qui rend Joanito intéressant n'est pas la taille de son agence. C'est sa façon de penser.
+
+---
+
+**D'où tu viens ? Comment tu as commencé avant Mar & Rocha Travel ? Qu'est-ce qui t'a amené à lancer l'agence ?**
+
+*Joanito :*
+
+> Ceci est la réponse de Joanito en tant que citation avec une barre latérale dorée.
+
+---
+
+La première chose qu'il dit, c'est simple : la réussite entrepreneuriale n'est pas une question de ressources. C'est une question de mentalité.
+
+Il ne le dit pas comme une phrase motivationnelle. Il le dit comme quelqu'un qui a observé le terrain, qui voit des opportunités là où d'autres voient des obstacles. Qui comprend que tu n'as pas besoin d'attendre que tout soit parfait. Tu commences. Tu franchis une étape. Tu en franchis une autre.
+
+---
+
+**Tu dis que la réussite entrepreneuriale est d'abord une question de mentalité. Qu'est-ce que tu entends exactement par là ?**
+
+*Joanito :*
+
+> Ceci est la réponse de Joanito en tant que citation avec une barre latérale dorée.
+
+---
+
+Regardez Mar & Rocha Travel. Il y a une progression claire.
+
+Une agence locale d'abord. Construite sur la qualité et le bouche-à-oreille. Puis la présence sur les plateformes internationales — parce qu'il comprend que c'est là que les voyageurs cherchent. Puis les services qui s'ajoutent. Les guides qui se professionnalisent. L'équipe qui grandit.
+
+Chaque étape a permis la suivante. Ce n'était pas un grand plan lancé une fois. C'était une succession de mouvements. Petits pas. Itération. Adaptation.
+
+---
+
+**Comment tu envisages la croissance de Mar & Rocha Travel ? Tu franchis les étapes comment — par petits pas ou tu cherches des sauts plus importants ? Donne un exemple concret.**
+
+> Ceci est la réponse de Joanito en tant que citation avec une barre latérale dorée.
+
+---
+
+La conversation a glissé vers l'IA.
+
+Il parle de l'IA pas comme un rêve futuriste. Comme quelque chose d'accessible maintenant. Surtout pour les entrepreneurs de pays sans les mêmes infrastructures que les pays développés. C'est là que l'IA change la donne.
+
+Il ne dit pas qu'il a tout automatisé. Il dit qu'il voit des possibilités. Comment utiliser ces outils pour franchir des étapes plus vite. Comment ne pas attendre que tout soit parfait pour commencer à les intégrer. Comment l'IA peut être un levier quand les ressources massives ne sont pas disponibles.
+
+---
+
+**Vous aviez parlé de l'IA comme une opportunité pour les entrepreneurs de pays qui n'ont pas les mêmes infrastructures que les pays développés. Comment tu vois ça ? Et comment tu envisages de l'utiliser toi-même ?**
+
+*Joanito :*
+
+> Ceci est la réponse de Joanito en tant que citation avec une barre latérale dorée.
+
+---
+
+Puis on a parlé du Cap-Vert au-delà du tourisme.
+
+Le grog de Fogo. Le fromage artisanal. Les produits qu'on n'exporte pas, qu'on ne transforme pas, qu'on laisse dormir. L'absence d'industrialisation sur des choses qui pourraient être des produits. Des opportunités.
+
+Joanito voit ça. Il voit les secteurs où la même mentalité entrepreneuriale pourrait créer quelque chose. Où l'IA pourrait accélérer les choses. Où les petits pas pourraient aboutir à quelque chose.
+
+---
+
+**Quel conseil tu donnerais à d'autres entrepreneurs qui veulent lancer ? Et au-delà du tourisme, où tu vois du potentiel non exploité au Cap-Vert ?**
+
+*Joanito :*
+
+> Ceci est la réponse de Joanito en tant que citation avec une barre latérale dorée.
+
+---
+
+Cette interview ne s'arrête pas ici. Chaque entrepreneur inspire quelqu'un d'autre. Il y a une chaîne — une constellation d'idées, de visions, de gens qui construisent.
+
+**Quel entrepreneur, quelle idée, quel profil — au Cap-Vert ou ailleurs — tu trouves intéressant et qu'on devrait documenter ?**
+
+*Joanito :*
+
+> Ceci est la réponse de Joanito en tant que citation avec une barre latérale dorée.
+
+---
+
+Archivel documente l'entrepreneuriat capverdien et diasporique à travers des parcours réels. Pas des théories abstraites. Des gens qui construisent maintenant, avec les défis, les obstacles, les choix concrets.
+
+Joanito représente quelque chose d'important. L'idée que pour les entrepreneurs de pays sans les mêmes infrastructures que les pays développés, les outils et les mentalités importent plus que les ressources massives. Que l'IA n'est pas un rêve lointain, mais quelque chose d'accessible. Que les petites étapes fonctionnent.
+
+Si tu es entrepreneur, ou si tu as rencontré quelqu'un d'intéressant dont la vision ou le parcours mérite d'être mis en avant — quelqu'un qui construit, qui pense différemment, qui voit des possibilités — je cherche ces histoires.
+
+Le même format peut s'appliquer à d'autres profils, d'autres secteurs, d'autres visions.
+
+*C'est comme ça que je bâtis une véritable archive de l'entrepreneuriat capverdien.*
 
 *Djunta* — on se retrouve.`
   }

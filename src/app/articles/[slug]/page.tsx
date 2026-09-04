@@ -12,8 +12,13 @@ function renderContent(content: string) {
     if (line === "---") {
       return <hr key={i} style={{ border: "none", borderTop: "0.5px solid rgba(11,11,11,0.1)", margin: "40px 0" }} />;
     }
+    // Blockquote pour les réponses
+    if (line.startsWith(">")) {
+      const blockquoteText = line.replace(/^>\s?/, "");
+      return <blockquote key={i} style={{ borderLeft: "3px solid #c8930a", paddingLeft: "16px", marginLeft: "0", marginRight: "0", fontSize: "17px", fontFamily: "Georgia, serif", lineHeight: 1.85, color: "rgba(11,11,11,0.75)", fontStyle: "italic", marginBottom: "16px" }}>{blockquoteText}</blockquote>;
+    }
     if (line.startsWith("**") && line.endsWith("**")) {
-      return <h3 key={i} style={{ fontFamily: "Georgia, serif", fontSize: "17px", fontWeight: 500, margin: "32px 0 12px", color: "#0b0b0b" }}>{line.replace(/\*\*/g, "")}</h3>;
+      return <h3 key={i} style={{ fontFamily: "Georgia, serif", fontSize: "19px", fontWeight: 600, margin: "32px 0 12px", color: "#0b0b0b" }}>{line.replace(/\*\*/g, "")}</h3>;
     }
     if (line === "") {
       return <br key={i} />;
@@ -41,7 +46,18 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       </nav>
 
       <article style={{ padding: "64px 48px", maxWidth: "640px", margin: "0 auto" }}>
-        <p style={{ fontSize: "12px", color: "rgba(11,11,11,0.35)", marginBottom: "16px", fontFamily: "sans-serif", letterSpacing: "0.5px" }}>{article.date}</p>
+        <div style={{ marginBottom: "16px" }}>
+          <p style={{ fontSize: "12px", color: "rgba(11,11,11,0.35)", marginBottom: "8px", fontFamily: "sans-serif", letterSpacing: "0.5px" }}>{article.date}</p>
+          {article.tags && article.tags.length > 0 && (
+            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+              {article.tags.map((tag) => (
+                <span key={tag} style={{ fontSize: "12px", color: "#c8930a", fontFamily: "sans-serif" }}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
         <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 400, lineHeight: 1.2, letterSpacing: "-0.02em", marginBottom: "48px", color: "#0b0b0b" }}>
           {article.title}
         </h1>

@@ -13,7 +13,7 @@ export default function ArticlesPage() {
       <section style={{ padding: "64px 48px", maxWidth: "720px", margin: "0 auto" }}>
         <h1 style={{ fontFamily: "Georgia, serif", fontSize: "32px", fontWeight: 400, marginBottom: "48px", letterSpacing: "-0.02em" }}>Articles</h1>
         <div>
-          {articlesList.map((article, i) => (
+          {[...articlesList].reverse().map((article, i) => (
             <div key={article.slug} style={{ borderTop: i === 0 ? "0.5px solid rgba(11,11,11,0.12)" : "none", borderBottom: "0.5px solid rgba(11,11,11,0.08)", padding: "28px 0" }}>
               <Link href={`/articles/${article.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
                 <p style={{ fontSize: "12px", color: "rgba(11,11,11,0.35)", marginBottom: "10px", fontFamily: "sans-serif" }}>{article.date}</p>
